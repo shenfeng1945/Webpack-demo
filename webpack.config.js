@@ -23,6 +23,10 @@ module.exports = {
               // style-loader将计算后样式加入页面中
               // css-loader使你能够使用类似@import和url(..)的方法实现require()的功能
               loader: 'style-loader!css-loader'
+          },
+          {
+              test: /\.scss$/,
+              use: ['style-loader','css-loader','sass-loader']
           }
       ]
    },

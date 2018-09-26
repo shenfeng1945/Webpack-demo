@@ -372,6 +372,29 @@ h1, h2, h3, h4, h5, h6, p, ul {
 import './main.css';//使用require导入css文件
 ```
 
+##### 3.3.3 sass
+
+安装依赖
+
+```
+npm install --save-dev sass-loader node-sass
+```
+
+webpack.config.js
+
+```
+module: {
+    loaders: [
+        // more...
+        {
+            test: /\.scss$/,
+            // loader: 'style-loader ! css-loader ! sass-loader' 加了空格会报错
+            use: ['style-loader','css-loader','sass-loader']
+        }
+    ]
+}
+```
+
 ### 四、解决webpack打包慢的问题.
 
 每次修改代码，gulp或者webpack检测到都会重新打包。但是，大多数情况下，需要重新打包的只有业务代码，其余的第三方库是不需要重新打包的，它们的存在只会减慢打包性能，所以我们需要优化打包过程。
